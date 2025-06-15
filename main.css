@@ -1,0 +1,144 @@
+
+/* It's dangerous to go alone! Take this color palette :) */
+/* My Strawberry code theme :) */
+body {
+    /* Colors */
+    --pal-strawberry:  hsl(347, 75%, 62%); /* Keywords */
+    --pal-banana:      hsl(36, 76%, 70%);  /* Type declaration identifiers */
+    --pal-apple:       hsl(74, 56%, 70%);  /* Class and protocol type names */
+    --pal-lime:        hsl(108, 50%, 73%); /* Struct and enum type names */
+    --pal-sky:         hsl(202, 46%, 63%); /* Type members */
+    --pal-lemon:       hsl(43, 92%, 64%);  /* Numbers */
+    --pal-orange:      hsl(13, 83%, 68%);  /* String literals */
+    /* Monochrome */
+    --pal-white:       hsl(0, 0%, 88%);
+    --pal-very-light:  hsl(0, 0%, 70%);
+    --pal-light:       hsl(0, 0%, 50%);
+    --pal-medium:      hsl(0, 0%, 23%);
+    --pal-medium-dark: hsl(0, 0%, 15%);
+    --pal-dark:        hsl(0, 0%, 11%);
+    --pal-very-dark:   hsl(0, 0%, 9%);
+    --pal-black:       hsl(0, 0%, 6%);
+    
+    /* Special */
+    --pal-nil:         hsla(0, 0%, 0%, 0%);
+    
+    /* UI */
+    
+    --pal-shadow: var(--pal-black);
+    --pal-border: var(--pal-medium);
+    --pal-background1: var(--pal-very-dark);
+    --pal-background2: var(--pal-dark);
+    --pal-background3: var(--pal-medium-dark);
+    
+    --pal-primary: var(--pal-white);
+    --pal-secondary: var(--pal-very-light);
+    --pal-tertiary: var(--pal-light);
+    --pal-quaternary: var(--pal-light);
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        --pal-strawberry:  hsl(347, 75%, 62%); /* Keywords */
+        --pal-banana:      hsl(36, 76%, 75%);  /* Type declaration identifiers */
+        --pal-apple:       hsl(74, 56%, 70%);  /* Class and protocol type names */
+        --pal-lime:        hsl(108, 50%, 73%); /* Struct and enum type names */
+        --pal-sky:         hsl(202, 46%, 63%); /* Type members */
+        --pal-lemon:       hsl(43, 92%, 64%);  /* Numbers */
+        --pal-orange:      hsl(13, 83%, 68%);  /* String literals */
+        
+        /* UI */
+        --pal-shadow: hsl(186, 1%, 75%);
+        --pal-border: hsl(0, 0%, 100%);
+        --pal-background1: hsl(186, 2%, 92%);
+        --pal-background2: hsl(0, 0%, 95%);
+        --pal-background3: hsl(0, 0%, 100%);
+        
+        --pal-primary: var(--pal-very-dark);
+        --pal-secondary: var(--pal-dark);
+        --pal-tertiary: var(--pal-very-dark);
+        --pal-quaternary: var(--pal-very-dark);
+    }
+}
+
+/* Utility classes */
+.strawberry { color: var(--pal-strawberry); font-style: italic; }
+.banana     { color: var(--pal-banana)     }
+.apple      { color: var(--pal-apple)      }
+.lime       { color: var(--pal-lime)       }
+.sky        { color: var(--pal-sky)        }
+.lemon      { color: var(--pal-lemon)      }
+.orange     { color: var(--pal-orange)     }
+.white      { color: var(--pal-white)      }
+.light      { color: var(--pal-light)      }
+.medium     { color: var(--pal-medium)     }
+.dark       { color: var(--pal-dark)       }
+.black      { color: var(--pal-black)      }
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: var(--pal-background1);
+    color: var(--pal-primary);
+    box-sizing: border-box;
+    overflow: hidden;
+    align-items: center;
+    justify-content: start;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+pz-instance {
+    
+}
+
+pz-teaser, pz-ad-teaser {
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+    height: 300px;
+    min-height: 300px;
+    background-color: var(--pal-background2);
+    color: var(--pal-white);
+    border: solid 1px var(--pal-border);
+    border-radius: 8px;
+    display: flex;
+    box-shadow: 0 0 0 1px var(--pal-shadow);
+}
+
+.grid-container {
+    width: 100%;
+    /* flex-shrink: 0; */
+    overflow-y: scroll;
+}
+
+.teaser-grid {
+    display: grid;
+    flex-shrink: 0;
+    padding: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.header-bar {
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+    flex-shrink: 0;
+    width: 100%;
+    font-size: 22px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    min-height: 50px;
+    border-bottom: solid 1px var(--pal-border);
+    box-shadow: 0 0 0 1px var(--pal-shadow);
+    background-color: var(--pal-background1);
+    /* background-image: linear-gradient(var(--pal-very-dark), var(--pal-dark)); */
+}
